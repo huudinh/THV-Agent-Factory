@@ -407,6 +407,39 @@ def bang_co_do(ws, rows):
     trong(ws)
 
 
+def sheet_co_do(wb, rows):
+    """Dung SHEET RIENG cho khoi co do, dat DAU TIEN trong moi file.
+
+    Khuon R1/R2/R3/R4 deu yeu cau sheet nay dung truoc sheet Tong quan:
+    nguoi mo file phai thay ca can bac si xem som TRUOC moi con so khac.
+    """
+    ws = sheet(wb, "Cờ đỏ")
+    tieu_de(ws, "🚩 CỜ ĐỎ — ĐỌC TRƯỚC MỌI SHEET KHÁC",
+            "Ca mang dấu hiệu cần bác sĩ đánh giá sớm. Có ca bị trấn an sai "
+            "thì việc đầu tiên là gọi lại khách đó hôm nay, không phải đọc "
+            "tiếp báo cáo.")
+    bang_co_do(ws, rows)
+    dong(ws, ["⚠ Script quét bằng từ khoá nên chỉ gợi ý. Người đọc lại từng ca "
+              "mới là nguồn chốt — đặc biệt với ca nhân viên CÓ nhận ra nhưng "
+              "xử lý nửa vời."])
+    return hoan_thien(ws)
+
+
+def tom_tat_co_do(ws, rows):
+    """Mot dong tom tat tren sheet Tong quan, tro ve sheet Co do."""
+    cd = [r for r in rows if r.get("co_do")]
+    sai = [r for r in rows if r.get("tran_an_sai_nv")]
+    if cd:
+        dong(ws, ["🚩 CỜ ĐỎ", "%d ca có dấu hiệu cần khám sớm, trong đó %d ca bị "
+                  "nhân viên trấn an sai. Chi tiết ở sheet \"Cờ đỏ\" — đọc sheet "
+                  "đó trước sheet này." % (len(cd), len(sai))], dam=True,
+             nen=CANH_BAO)
+    else:
+        dong(ws, ["🚩 CỜ ĐỎ", "Đã sàng %d hội thoại theo 6 mã CĐ-1…CĐ-6, không "
+                  "phát hiện ca nào. Xem sheet \"Cờ đỏ\"." % len(rows)], dam=True)
+    trong(ws)
+
+
 def bang_phan_bo(ws, rows):
     n = len(rows)
     muc(ws, "Kết quả phân loại — đếm thật từ dữ liệu")
@@ -480,6 +513,7 @@ def r1(rows, ky, dich_vu, out_dir, mau_loc=None):
 
     # ---------- FILE 1: goc nhin QUY TRINH
     wb = so_moi()
+    sheet_co_do(wb, rows)
     ws = sheet(wb, "Tổng quan")
     tieu_de(ws, "R1 · PHÂN LOẠI & KỊCH BẢN HỘI THOẠI — %s" % dich_vu,
             "Kỳ %s · %d hội thoại · góc nhìn QUY TRÌNH · lập ngày %s"
@@ -492,7 +526,7 @@ def r1(rows, ky, dich_vu, out_dir, mau_loc=None):
         ("④ NỘI DUNG", "Soạn tin gửi được ngay", B4),
     ])
     trong(ws)
-    bang_co_do(ws, rows)
+    tom_tat_co_do(ws, rows)
     khoi_canh_bao_chuan(ws, rows, mau_loc)
     trong(ws)
     bang_5_tin_hieu(ws)
@@ -669,10 +703,11 @@ def r1(rows, ky, dich_vu, out_dir, mau_loc=None):
 
     # ---------- FILE 2: goc nhin PHAN LOAI + BANK KICH BAN
     wb = so_moi()
+    sheet_co_do(wb, rows)
     ws = sheet(wb, "Tổng quan")
     tieu_de(ws, "R1 · PHÂN LOẠI CHI TIẾT & BANK KỊCH BẢN — %s" % dich_vu,
             "Kỳ %s · %d hội thoại · lập ngày %s" % (ky, n, _hom_nay()))
-    bang_co_do(ws, rows)
+    tom_tat_co_do(ws, rows)
     khoi_canh_bao_chuan(ws, rows, mau_loc)
     trong(ws)
     bang_phan_bo(ws, rows)
@@ -715,19 +750,23 @@ def r1(rows, ky, dich_vu, out_dir, mau_loc=None):
     for i, (ten, dsach, cach) in enumerate([
         ("Lờ câu hỏi giá — khách hỏi giá, nhân viên chỉ đáp \"để lại số\"",
          None, "⚠ cần đọc hiểu, script không bắt được — xem R3"),
-        ("Bắn giá cứng cho một ca cụ thể", None,
+        ("🚩 Trấn an một ca có cờ đỏ — lỗi nặng nhất của hệ", co_do_tran_an, None),
+        ("Chẩn đoán hoặc loại trừ bệnh qua tin nhắn", None,
+         "⚠ cần đọc hiểu — xem R3 sheet Rủi ro pháp lý"),
+        ("Đọc kết quả nội soi / xét nghiệm / giải phẫu bệnh qua inbox", None,
          "⚠ cần đọc hiểu — xem R3"),
-        ("Dán mẫu máy móc, trả lời không dính điều khách vừa nói", None,
+        ("Tư vấn thuốc, liều, phác đồ — kể cả phác đồ diệt HP", None,
          "⚠ cần đọc hiểu — xem R3"),
         ("Nói \"không đau\" / dùng từ cấm", tc, None),
-        ("Gắn \"chính hãng\" cho vật liệu ngoài 4 hãng đã duyệt", None,
-         "⚠ cần đọc hiểu — xem R3 sheet Rủi ro pháp lý"),
+        ("Hứa chắc tiền mê được khi chưa biết bệnh nền", None,
+         "⚠ cần đọc hiểu — xem R3"),
+        ("Báo giá mà không nói 3 điều kiện (ai thực hiện · có tiền mê · phụ phí)",
+         None, "⚠ cần đọc hiểu — xem R3"),
         ("Xin số không có lý do, hoặc lý do \"để gửi ưu đãi\"", None,
          "⚠ cần đọc hiểu — xem R3"),
-        ("Xin số rồi để yên — không nhắn xác nhận ai gọi, số nào, mấy giờ",
+        ("Mời khám mà KHÔNG dặn chuẩn bị · xin số rồi để yên",
          None, "⚠ cần đọc hiểu — xem R3"),
-        ("Hứa thời gian điều trị cứng", None, "⚠ cần đọc hiểu — xem R3"),
-        ("BỎ MẤT BẰNG CHỨNG: khách ngờ vật liệu (L6.7) mà không nhắc đối tác hãng",
+        ("BỎ MẤT BẰNG CHỨNG: khách nêu rào cản mà NV không đưa bằng chứng nào",
          ngo_ko_hang, None),
     ], start=1):
         if dsach is not None:
@@ -808,9 +847,9 @@ def r1(rows, ky, dich_vu, out_dir, mau_loc=None):
             nd,
             "⚠ chưa viết — nội dung chạm lần 2",
             "⚠ chưa viết — nội dung chạm lần 3",
-            "Không từ cấm · \"chính hãng\" chỉ cho 4 hãng duyệt · "
-            "không chốt giá ca cụ thể · không hứa thời gian cứng · "
-            "không chẩn đoán qua tin nhắn",
+            "Không từ cấm · không chẩn đoán / loại trừ bệnh · không đọc kết "
+            "quả · không tư vấn thuốc · không hứa chắc tiền mê · nêu khung giá "
+            "phải kèm 3 điều kiện · ca cờ đỏ thì KHÔNG nêu giá, KHÔNG trấn an",
         ], nen=MO if len(hts) < NGUONG_MAU else None)
     hoan_thien(ws)
 
@@ -940,6 +979,7 @@ def r2(rows, ky, dich_vu, out_dir, posts=None, mau_loc=None):
         theo_post[gom(r)].append(r)
 
     wb = so_moi()
+    sheet_co_do(wb, rows)
     ws = sheet(wb, "Tổng quan")
     tieu_de(ws, "R2 · PHÂN TẦNG POST QUẢNG CÁO — %s" % dich_vu,
             "Kỳ %s · chế độ %s · %d hội thoại · %d post · lập ngày %s"
@@ -958,7 +998,7 @@ def r2(rows, ky, dich_vu, out_dir, posts=None, mau_loc=None):
         dong(ws, [a, b])
     trong(ws)
     it = [k for k, v in theo_post.items() if len(v) < NGUONG_MAU]
-    bang_co_do(ws, rows)
+    tom_tat_co_do(ws, rows)
     khoi_canh_bao_chuan(ws, rows, mau_loc, extra=[
         "%d / %d post có dưới %d hội thoại → ⚠ chưa đủ mẫu, khuyến nghị bắt "
         "buộc là CHỜ THÊM DỮ LIỆU." % (len(it), len(theo_post), NGUONG_MAU),
@@ -1351,19 +1391,7 @@ def r3(rows, ky, dich_vu, out_dir, mau_loc=None):
     cd_sai = [r for r in rows if r.get("tran_an_sai_nv")]
 
     wb = so_moi()
-    ws = sheet(wb, "Cờ đỏ")
-    tieu_de(ws, "🚩 CỜ ĐỎ — NHẬN RA HAY BỎ SÓT",
-            "SHEET SỐ 1. Đọc trước mọi sheet khác. Một ca nôn ra máu bị trả lời "
-            "\"chị uống thuốc dạ dày xem sao\" là chuyện nặng hơn mọi điểm trung "
-            "bình trong báo cáo này.")
-    bang_co_do(ws, rows)
-    trong(ws)
-    dong(ws, ["⚠ Script chỉ bắt được CÂU TRẤN AN bằng từ khoá. Việc nhân viên "
-              "CÓ NHẬN RA cờ đỏ hay không (có hỏi thêm, có mời khám sớm, có nói "
-              "sẽ chuyển bác sĩ) thì cần NGƯỜI ĐỌC từng ca ở cột bên."])
-    dong(ws, ["⚠ Ca bị trấn an sai thì việc cần làm là GỌI LẠI KHÁCH ĐÓ HÔM NAY, "
-              "không phải đọc con số ở cuối tháng."])
-    hoan_thien(ws)
+    sheet_co_do(wb, rows)
 
     ws = sheet(wb, "Tổng quan")
     tieu_de(ws, "R3 · CHẤT LƯỢNG TƯ VẤN & ĐÀO TẠO — %s" % dich_vu,
@@ -1585,8 +1613,9 @@ def r3(rows, ky, dich_vu, out_dir, mau_loc=None):
 
     ws = sheet(wb, "Rủi ro pháp lý")
     tieu_de(ws, "⚠ RỦI RO PHÁP LÝ — ĐỌC SHEET NÀY TRƯỚC MỌI SHEET KHÁC",
-            "Một câu \"cam kết 100%\" hoặc một chữ \"chính hãng\" gắn sai trong "
-            "inbox là rủi ro pháp lý ngành y tế, không phải lỗi kỹ năng.")
+            "Một câu trấn an cho ca có cờ đỏ, một câu chẩn đoán qua tin nhắn, "
+            "hay một chữ \"không đau\" trong inbox là rủi ro pháp lý và rủi ro "
+            "an toàn người bệnh — không phải lỗi kỹ năng.")
     dong_tieu_de(ws, ["STT HT", "Ngày", "Phụ trách", "Loại vi phạm",
                       "Trích nguyên văn", "Mức rủi ro", "Việc cần làm"])
     if not tc:
@@ -1627,6 +1656,7 @@ def r4(rows, ky, dich_vu, out_dir, so_lieu=None, mau_loc=None):
     n = len(rows)
     sl = so_lieu or {}
     wb = so_moi()
+    sheet_co_do(wb, rows)
 
     def phieu(ten):
         v = sl.get(ten)
@@ -1688,7 +1718,7 @@ def r4(rows, ky, dich_vu, out_dir, so_lieu=None, mau_loc=None):
               "không ai thấy. Dải giá chênh gần chín lần, nên đây là lỗi đọc số "
               "đặc trưng của ngành này."], nen=CANH_BAO)
     trong(ws)
-    bang_co_do(ws, rows)
+    tom_tat_co_do(ws, rows)
     khoi_canh_bao_chuan(ws, rows, mau_loc)
     trong(ws)
     muc(ws, "Ba việc tháng tới")
@@ -1698,6 +1728,41 @@ def r4(rows, ky, dich_vu, out_dir, so_lieu=None, mau_loc=None):
     hoan_thien(ws)
 
     sheet_chu_giai(wb)
+
+    ws = sheet(wb, "Hoãn tại chỗ")
+    tieu_de(ws, "⭐ HOÃN TẠI CHỖ — VÌ SAO KHÁCH ĐẾN MÀ KHÔNG SOI ĐƯỢC",
+            "Mốc rò nặng nhất của ngành: khách đã tốn TOÀN BỘ chi phí quảng cáo "
+            "và một buổi của hai bên, mà doanh thu bằng không. Phần lớn lý do là "
+            "LỖI DẶN DÒ, sửa được bằng một tin nhắn mẫu.")
+    dong_tieu_de(ws, ["Lý do hoãn", "Số ca", "% trên số ca đến khám",
+                      "Lỗi thuộc khâu nào", "Sửa bằng cách gì", "Ai phụ trách",
+                      "Cách đo lại sau 1 tháng"])
+    for ly_do, khau, sua, ai in [
+        ("Nhịn ăn chưa đủ giờ", "Hướng dẫn chuẩn bị",
+         "Gửi {hướng_dẫn_chuẩn_bị} ở mốc T+48h và nhắc lại T–1 ngày",
+         "Trực page + CSKH"),
+        ("Ruột chưa sạch", "Hướng dẫn chuẩn bị",
+         "Hướng dẫn uống thuốc làm sạch theo bản chính thức của THV, "
+         "nhắc mốc uống chứ không chỉ gửi file", "CSKH"),
+        ("Không đủ điều kiện tiền mê", "Sàng lọc trước khi hẹn",
+         "Hỏi bệnh nền và thuốc đang dùng NGAY ở bước B2, trước khi chốt buổi",
+         "Trực page"),
+        ("Không có người đưa về", "Dặn trước",
+         "Thêm một dòng vào tin xác nhận lịch", "CSKH"),
+        ("Đến rồi vẫn không dám soi", "Rào cản SỢ / NÉ chưa được gỡ",
+         "Đọc lại hội thoại: rào cản nào chưa được trả lời bằng bằng chứng",
+         "Trưởng nhóm"),
+        ("Lý do khác", "—", "⚠ ghi rõ để kỳ sau gom nhóm được", "Lễ tân"),
+    ]:
+        dong(ws, [ly_do, CD, CD, khau, sua, ai,
+                  "⚠ đặt mốc sau khi có số kỳ đầu"])
+    trong(ws)
+    dong(ws, ["⚠ CHƯA ĐO ĐƯỢC — ĐỀ NGHỊ DỮ LIỆU QUAN TRỌNG NHẤT CỦA BÁO CÁO NÀY",
+              "Cần bảng ghi nhận của lễ tân: mỗi ca đến khám mà không soi được, "
+              "ghi MỘT DÒNG lý do, chọn trong sáu lý do trên. Mất vài giây mỗi "
+              "ca. Có bảng đó thì sheet này chỉ ra được chỗ mất tiền nhiều nhất "
+              "của phòng khám."], nen=CANH_BAO)
+    hoan_thien(ws)
 
     ws = sheet(wb, "Phễu theo dịch vụ")
     tieu_de(ws, "PHỄU THEO DỊCH VỤ",
@@ -1932,8 +1997,8 @@ def r4(rows, ky, dich_vu, out_dir, so_lieu=None, mau_loc=None):
          "KHÔNG lấy số đặt lịch thay thế. Hai con số lệch nhau rất nhiều"),
         ("Số ca vi phạm ngôn từ", "đếm HT có từ cấm trong lời NV",
          len(tc), n, "khớp từ khoá trong tu-dien-van-de-rang.json",
-         "Chỉ bắt được từ cấm viết đúng chính tả. Không bắt được chốt giá cứng, "
-         "chẩn đoán qua tin nhắn, hay gắn \"chính hãng\" sai — xem R3"),
+         "Chỉ bắt được từ cấm viết đúng chính tả. Không bắt được chẩn đoán qua "
+         "tin nhắn, đọc kết quả, tư vấn thuốc hay báo giá thiếu điều kiện — xem R3"),
     ]:
         dong(ws, [a, b, t, m, ng, hc])
     hoan_thien(ws)

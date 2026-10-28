@@ -244,6 +244,21 @@ phạm vi. Lỗi 1 nặng hơn.
 
 ---
 
+## Bảng kiểm sheet — đối chiếu trước khi giao file
+
+File ra phải có **đúng 8 sheet, đúng thứ tự, đúng tên**.
+
+```
+[ ] 1. Cờ đỏ                    [ ] 5. Tiêu chí nào đang hổng
+[ ] 2. Tổng quan                [ ] 6. Theo người phụ trách        🔒 dữ liệu nhân sự
+[ ] 3. Chú giải ký hiệu         [ ] 7. Kế hoạch đào tạo 4 tuần
+[ ] 4. Chấm từng hội thoại      [ ] 8. Rủi ro pháp lý
+```
+
+📐 File mẫu đủ 8 sheet: [`template/THV_MAU_R3_ChatLuongTuVan.xlsx`](../template/THV_MAU_R3_ChatLuongTuVan.xlsx)
+
+---
+
 ## Lưu ý khi dùng
 
 **Sheet 1 và sheet 8 đọc trước, không đọc sau.** Và sheet 1 **không chờ hết báo cáo** — prompt yêu cầu báo ngay ở bước 2 nếu có ca bị trấn an sai. Lý do đơn giản: nếu một khách nôn ra máu được trả lời *"chị uống thuốc dạ dày xem sao"* cách đây mười ngày, thì việc cần làm là **gọi lại khách đó hôm nay**, không phải đọc con số ở cuối tháng.

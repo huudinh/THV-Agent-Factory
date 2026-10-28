@@ -12,6 +12,8 @@
 
 > **Trước khi chạy:** thay `{{FILE}}` và `{{DỊCH VỤ}}` ở đầu prompt. Dịch vụ ví dụ: *Nội soi dạ dày · Nội soi đại tràng · Combo tầm soát · Khám tiêu hóa*.
 
+> **📐 Có file mẫu để đối chiếu.** Hai file trong [`template/`](../template/) sinh từ 12 hội thoại mô phỏng, **đủ 6 sheet đúng tên và đúng thứ tự** như khuôn này yêu cầu. Mở ra xem trước khi chạy thật: [`THV_MAU_R1_PhanLoai-KichBan.xlsx`](../template/THV_MAU_R1_PhanLoai-KichBan.xlsx) và [`THV_MAU_R1_BankKichBan.xlsx`](../template/THV_MAU_R1_BankKichBan.xlsx). File ra mà **thiếu sheet hoặc sai tên sheet là chạy sai**, không phải biến thể chấp nhận được.
+
 > 🚩 **Báo cáo này có một việc quan trọng hơn mọi con số trong nó: không để sót ca cờ đỏ.** Sheet đầu tiên của cả hai file là khối cờ đỏ. Kỳ nào không có ca nào thì vẫn giữ sheet, ghi rõ *"không phát hiện ca có dấu hiệu cờ đỏ"*.
 
 > **📎 Có code mẫu sẵn.** Không cần viết `openpyxl` từ đầu — [`tools/xuat_bao_cao.py`](../tools/xuat_bao_cao.py) đã dựng đúng cấu trúc sheet, định dạng và sheet chú giải của báo cáo này:
@@ -350,6 +352,27 @@ Góc nhìn: PHÂN LOẠI + BANK KỊCH BẢN theo nhóm đối tượng. 6 sheet
    nhau về cờ đỏ / L-code / độ nóng / nhóm giá trị / nhóm vấn đề của từng hội thoại không ·
    tổng số lead ở sheet "Chăm sóc theo độ nóng × giá trị" có bằng tổng đếm được không ·
    còn sót từ cấm hoặc số chưa gắn ⚠ không · có chỗ nào chẩn đoán hoặc trấn an không.
+
+# BẢNG KIỂM SHEET — ĐỐI CHIẾU TRƯỚC KHI GIAO FILE
+In ra bảng này và tự tick. Thiếu một sheet, hoặc sai tên, hoặc sai thứ tự → CHƯA XONG,
+sửa rồi mới giao. Tên sheet viết đúng y như dưới đây, kể cả dấu và chữ hoa.
+
+FILE 1 — THV_<DV>_PhanLoai_KichBan.xlsx          FILE 2 — THV_KichBan_<DV>.xlsx
+  [ ] 1. Cờ đỏ                                     [ ] 1. Cờ đỏ
+  [ ] 2. Tổng quan                                 [ ] 2. Tổng quan
+  [ ] 3. Chú giải ký hiệu                          [ ] 3. Chú giải ký hiệu
+  [ ] 4. Khung 5 bước B1-B5                        [ ] 4. Phân loại <N> HT
+  [ ] 5. Quy trình <N> HT                          [ ] 5. Kịch bản <DV>
+  [ ] 6. Nhịp chăm sóc                             [ ] 6. Chăm sóc theo độ nóng × giá trị
+
+Ba quy ước về sheet, áp cho cả hai file:
+- Sheet "Cờ đỏ" LUÔN đứng đầu, kể cả kỳ không có ca nào — khi đó vẫn giữ sheet và ghi
+  "Đã sàng <N> hội thoại theo 6 mã CĐ-1…CĐ-6, không phát hiện ca nào". Người mở file
+  phải biết là ĐÃ SÀNG, không phải CHƯA SÀNG.
+- Sheet "Chú giải ký hiệu" LUÔN có, và phải giải nghĩa đủ mọi mã xuất hiện trong file đó.
+  File có mã mà chú giải không có mã đó là thiếu.
+- <N> là số hội thoại đếm được ở bước 1, <DV> là dịch vụ đang phân tích. Hai số/chữ này
+  thay vào tên sheet, không để nguyên dấu ngoặc.
 ````
 
 ## Đến đây

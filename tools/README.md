@@ -117,11 +117,18 @@ Xếp sai nhóm này là gửi sai nội dung: ưu đãi giảm giá cho ngườ
 
 ---
 
-## Một điểm script khác với khuôn báo cáo
+## Sinh ra đúng số sheet như khuôn
 
-Khuôn `R1`, `R2`, `R4` yêu cầu **khối cờ đỏ là một sheet riêng, đứng đầu file**. Script hiện đặt khối đó **ở đầu sheet thứ nhất** (Tổng quan / Một trang cho lãnh đạo) thay vì tách sheet riêng — trừ `R3`, nơi nó là sheet riêng đúng như khuôn.
+Script sinh **đúng số sheet mà khuôn yêu cầu**, sheet `Cờ đỏ` luôn đứng đầu:
 
-Về nội dung thì không thiếu gì, nhưng nếu bạn cần đúng cấu trúc sheet như khuôn thì nói với trợ lý: *"Tách khối cờ đỏ thành sheet riêng đặt trước sheet Tổng quan."*
+| Báo cáo | File ra | Số sheet |
+|---|---|---|
+| `R1` | 2 file | 6 + 6 |
+| `R2` | 1 file | 14 |
+| `R3` | 1 file | 8 |
+| `R4` | 1 file | 11 |
+
+Đối chiếu nhanh bằng file mẫu trong [`template/`](../template/) — sinh từ 12 hội thoại mô phỏng, mở ra xem được ngay. File chạy thật mà thiếu sheet hoặc sai tên sheet là **chạy sai khuôn**, không phải biến thể chấp nhận được.
 
 ---
 

@@ -279,6 +279,24 @@ Từ 2 kỳ trở lên thì thêm sheet cuối: **So sánh kỳ** — xem khuôn
 
 ---
 
+## Bảng kiểm sheet — đối chiếu trước khi giao file
+
+File ra phải có **đúng 14 sheet, đúng thứ tự, đúng tên**. Thiếu hoặc sai tên là chạy sai.
+
+```
+[ ]  1. Cờ đỏ                      [ ]  8. Rào cản theo post
+[ ]  2. Tổng quan                  [ ]  9. ① Nhiệt Vấn đề × Nóng
+[ ]  3. Chú giải ký hiệu           [ ] 10. ② Nhiệt Góc × Vấn đề
+[ ]  4. Phân tầng theo post        [ ] 11. ③ Nhiệt Vấn đề × Rào cản
+[ ]  5. Xếp hạng & khuyến nghị     [ ] 12. ④ Nhiệt Post × Nóng
+[ ]  6. Post × Nhóm giá trị        [ ] 13. Mẫu hội thoại thực tế
+[ ]  7. Góc tiếp cận → tầng        [ ] 14. Dữ liệu thô
+```
+
+📐 File mẫu đủ 14 sheet: [`template/THV_MAU_R2_PhanTang-QuangCao.xlsx`](../template/THV_MAU_R2_PhanTang-QuangCao.xlsx)
+
+---
+
 ## Chuẩn bị dữ liệu đầu vào
 
 **Danh sách post** cần tối thiểu: tên/mã post · nội dung chính (headline) · dịch vụ · thời gian chạy. Có thêm chi phí và lượt tin nhắn thì tốt, nhưng không bắt buộc — báo cáo này đo **chất lượng khách kéo về**, không đo chi phí quảng cáo.

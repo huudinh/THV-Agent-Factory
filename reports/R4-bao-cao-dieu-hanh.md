@@ -229,6 +229,27 @@ Cấu trúc:
 
 ---
 
+## Bảng kiểm sheet — đối chiếu trước khi giao file
+
+File ra phải có **đúng 11 sheet, đúng thứ tự, đúng tên**.
+
+```
+[ ]  1. Cờ đỏ                       [ ]  7. Rào cản toàn kỳ
+[ ]  2. Một trang cho lãnh đạo      [ ]  8. Chất lượng tư vấn
+[ ]  3. Chú giải ký hiệu            [ ]  9. Hiệu quả quảng cáo
+[ ]  4. Hoãn tại chỗ          ⭐    [ ] 10. Tệp giá trị dài hạn
+[ ]  5. Phễu theo dịch vụ           [ ] 11. Dữ liệu thô & cách tính
+[ ]  6. Chân dung theo vấn đề
+```
+
+⭐ Sheet 4 thường toàn `⚠ chưa đo được` ở lần chạy đầu — **vẫn phải có**, vì nó là chỗ
+nêu đề nghị dữ liệu quan trọng nhất của báo cáo: nhờ lễ tân ghi một dòng lý do cho mỗi
+ca đến khám mà không soi được.
+
+📐 File mẫu đủ 11 sheet: [`template/THV_MAU_R4_BaoCaoDieuHanh.xlsx`](../template/THV_MAU_R4_BaoCaoDieuHanh.xlsx)
+
+---
+
 ## Lưu ý khi dùng
 
 **Chạy R4 sau cùng.** Nó dùng lại kết quả của R1 (phân loại), R2 (quảng cáo), R3 (chất lượng tư vấn). Chạy R4 đầu tiên thì sheet 8 và sheet 9 chỉ còn bản rút gọn, giá trị thấp hơn nhiều.

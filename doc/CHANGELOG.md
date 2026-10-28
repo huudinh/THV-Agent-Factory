@@ -86,9 +86,9 @@ Xếp theo mức chặn công việc, nặng nhất lên đầu.
 | # | Việc | Ghi chú |
 |---|---|---|
 | A | ~~Trang hướng dẫn cho người dùng cuối~~ | ✅ **Xong 28/10/2026** — [https://claude.ai/artifact/H9LDZsYucRSeGvqnX2ubkg](https://claude.ai/artifact/H9LDZsYucRSeGvqnX2ubkg). Nguồn ở `tools/huong-dan.html`, bơm lại bằng `tools/cap-nhat-trang-huong-dan.py`. Đã mở Share "ai có link cũng xem". **v1.1 (28/10): dựng lại style + layout** theo hệ Be Vietnam Pro, thanh header tối, step số tròn, file-card có badge, prompt-card có header + footer, bảng header tối |
-| B | **Tách khối cờ đỏ thành sheet riêng** trong `xuat_bao_cao.py` cho R1/R2/R4 | Hiện khối đó nằm ở **đầu sheet thứ nhất** thay vì sheet riêng. R3 đã đúng khuôn. Nội dung không thiếu, chỉ khác cấu trúc sheet — xem `tools/README.md` |
+| B | ~~Tách khối cờ đỏ thành sheet riêng~~ | ✅ **Xong 28/10/2026** — sheet `Cờ đỏ` đứng đầu cả 5 file. Thêm sheet `Hoãn tại chỗ` còn thiếu của R4. Script giờ sinh đúng số sheet khuôn yêu cầu: R1 6+6 · R2 14 · R3 8 · R4 11 |
 | C | **Script cho `R6` và nhóm `W`** | Hiện trợ lý tự viết, dùng lại `excel_style.py`. Chạy nhiều lần thì nên có script |
-| D | ~~Bộ `template/` file Excel mẫu~~ | ✅ **Xong 28/10/2026** — 2 file sinh từ 12 hội thoại mô phỏng, kèm `template/README.md`. Phải thêm ngoại lệ `!template/*.xlsx` trong `.gitignore` vì luật `*.xlsx` chặn sẵn |
+| D | ~~Bộ `template/` file Excel mẫu~~ | ✅ **Xong 28/10/2026** — **5 file mẫu đủ tab** (R1 ×2, R2, R3, R4) sinh từ 12 hội thoại mô phỏng, kèm `template/README.md`. Phải thêm ngoại lệ `!template/*.xlsx` trong `.gitignore` vì luật `*.xlsx` chặn sẵn |
 | E | **Cải thiện nhận diện `L6.8`** trong `tu-dien-tieu-hoa.json` | Từ khoá chỉ bắt được tín hiệu bề mặt. Sau vài kỳ dữ liệu thật thì bổ sung được cách khách thật hay nói |
 | F | **Kiểm lại nhận xét ở `P9` §1** về cụm nội dung nào đang mỏng | Hiện dựa trên **một lần quan sát bề mặt website**, chưa phải số đo. `W2` phải đo lại bằng danh sách URL thật |
 
