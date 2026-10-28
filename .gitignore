@@ -5,9 +5,6 @@ rows.json
 !doc/mau-du-lieu/*.xlsx
 # file mau dinh dang trong template/ sinh tu du lieu mo phong -> cho commit
 !template/*.xlsx
-# nhung file cua thuong hieu khac thi KHONG - repo nay de public
-template/Kangnam_*.xlsx
-template/Paris_*.xlsx
 
 # Du lieu nguon hoi thoai that — KHONG commit
 hoi-thoai*.md

@@ -5,6 +5,7 @@
 
 | File | Khuôn | Xem được gì |
 |---|---|---|
+| `Kangnam_KichBan_CatMi.xlsx` | — | **File của thương hiệu khác trong tập đoàn** (kịch bản cắt mí, Kangnam). Giữ ở đây để đối chiếu định dạng giữa các bản. Bản gốc nằm ở `Paris-Agent-Factory/template/` |
 | `THV_MAU_R1_PhanLoai-KichBan.xlsx` | [`R1`](../reports/R1-phan-loai-hoi-thoai.md) file 1 | Góc nhìn **quy trình**: mỗi hội thoại một dòng đi trọn 4 bước, có cột nội dung gợi ý gửi ngay · khung B1–B5 · nhịp chăm sóc |
 | `THV_MAU_R1_BankKichBan.xlsx` | [`R1`](../reports/R1-phan-loai-hoi-thoai.md) file 2 | Góc nhìn **phân loại**: từng hội thoại kèm bitmask tín hiệu, L-code, nhóm giá trị · bank kịch bản theo nhóm · bảng chăm sóc độ nóng × giá trị |
 
