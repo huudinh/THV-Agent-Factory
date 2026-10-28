@@ -1,0 +1,83 @@
+{
+  "_doc": "Tu dien tu khoa cho tools/phan_loai.py. Nguoi lam noi dung sua duoc file nay ma khong can sua code. Thu tu trong 'van_de' la THU TU UU TIEN - khop nhom dau tien thi lay. TH-01 (co do) duoc xet RIENG truoc moi nhom khac, trong khoi 'co_do'.",
+  "_version": "1.0",
+  "_nguon": "knowledge/P4-dich-vu.md (TH-01..TH-12, CD-1..CD-6, G1/G2/G3) + P6-van-hanh.md (L-code)",
+
+  "co_do": {
+    "_doc": "CO DO - xet TRUOC moi thu. Co bat ky tu khoa nao -> TH-01, HOT (ghi de 2), gan co. Thieu sot mot ca la rui ro nguoi benh, nen tu dien nay co tinh nhan RONG: tha gan thua con hon bo sot. Nguoi doc lai se loai ca gan thua.",
+    "CĐ-1": {"ten": "Xuất huyết tiêu hóa", "kw": ["nôn ra máu", "nôn máu", "ói ra máu", "phân đen", "đi ngoài phân đen", "phân màu đen", "phân như bã cà phê", "bã cà phê", "máu lẫn phân", "phân lẫn máu", "phân có máu đen", "đại tiện phân đen"]},
+    "CĐ-2": {"ten": "Sụt cân nhanh không rõ lý do", "kw": ["sụt cân", "sút cân", "giảm cân nhanh", "gầy đi nhanh", "tụt mấy kg", "sụt mấy kg", "xuống mấy kg", "gầy sút"]},
+    "CĐ-3": {"ten": "Khó nuốt tăng dần", "kw": ["khó nuốt", "nuốt nghẹn", "nuốt đau", "nghẹn ở cổ", "nuốt khó", "thức ăn mắc lại", "nuốt bị tắc"]},
+    "CĐ-4": {"ten": "Thiếu máu không rõ nguyên nhân", "kw": ["thiếu máu", "hồng cầu thấp", "hemoglobin thấp", "da xanh", "xanh xao", "hb thấp"]},
+    "CĐ-5": {"ten": "Đau dữ dội / khối ở bụng / vàng da", "kw": ["đau dữ dội", "đau quặn dữ dội", "đau không chịu được", "sờ thấy cục", "sờ thấy khối", "có khối", "nổi cục ở bụng", "vàng da", "vàng mắt", "nước tiểu sẫm"]},
+    "CĐ-6": {"ten": "Tiền sử gia đình ung thư tiêu hóa", "kw": ["bố em ung thư", "mẹ em ung thư", "bố bị ung thư", "mẹ bị ung thư", "anh trai ung thư", "chị bị ung thư", "gia đình có người ung thư", "nhà em có người ung thư", "ung thư dạ dày", "ung thư đại tràng", "tiền sử gia đình"]}
+  },
+
+  "van_de": [
+    ["TH-02", "Theo dõi sau can thiệp · đến hẹn soi lại", ["soi lại", "nội soi lại", "bác sĩ hẹn", "đến hẹn", "theo hẹn", "đã cắt polyp", "cắt polyp rồi", "barrett", "loạn sản", "theo dõi định kỳ", "tái khám theo hẹn", "lần trước soi"]],
+    ["TH-03", "Tầm soát ung thư · không triệu chứng", ["tầm soát", "kiểm tra định kỳ", "khám định kỳ", "khám sức khỏe", "phòng xa", "chưa có biểu hiện", "không có triệu chứng", "kiểm tra cho yên tâm", "gói khám", "ngoài 40", "trên 40 tuổi", "ngoài 50"]],
+    ["TH-07", "Polyp · khối u đã biết", ["có polyp", "phát hiện polyp", "polyp", "cần cắt polyp", "có khối u", "nhân", "u lành"]],
+    ["TH-10", "Nhiễm HP · kết quả xét nghiệm HP", ["hp dương", "vi khuẩn hp", "hp+", "nhiễm hp", "diệt hp", "test hp", "test hơi thở", "hp kháng thuốc", "cả nhà có hp", "helicobacter"]],
+    ["TH-11", "Mang kết quả nơi khác đến", ["đã soi ở", "soi ở bệnh viện", "có kết quả", "kết quả nội soi", "kết quả sinh thiết", "bác sĩ kia", "bác sĩ bên đó", "họ chỉ định", "được chỉ định soi", "phiếu kết quả", "đọc hộ kết quả", "khám ở chỗ khác"]],
+    ["TH-06", "Chảy máu thấp · trĩ – hậu môn", ["máu đỏ tươi", "ra máu đỏ", "đi ngoài ra máu", "trĩ", "búi trĩ", "rát hậu môn", "nứt kẽ", "đau hậu môn", "sa búi"]],
+    ["TH-04", "Dạ dày – thực quản", ["đau thượng vị", "đau dạ dày", "viêm dạ dày", "loét dạ dày", "trào ngược", "ợ nóng", "ợ chua", "ợ hơi", "nóng rát", "rát cổ", "đau bụng trên", "đầy bụng sau ăn", "viêm hang vị", "viêm thực quản", "đau vùng ức"]],
+    ["TH-05", "Đại tràng – trực tràng", ["táo bón", "tiêu chảy", "đi ngoài nhiều lần", "phân lỏng", "đại tràng", "viêm đại tràng", "đau quặn bụng", "phân nhỏ", "phân dẹt", "thay đổi khuôn phân", "đi ngoài không hết", "hội chứng ruột"]],
+    ["TH-08", "Gan – mật – tụy", ["men gan", "gan nhiễm mỡ", "sỏi mật", "viêm gan b", "viêm gan c", "siêu âm gan", "tụy", "viêm tụy", "u gan", "xơ gan"]],
+    ["TH-09", "Rối loạn tiêu hóa chung", ["khó tiêu", "đầy hơi", "chướng bụng", "ăn không tiêu", "buồn nôn", "sôi bụng", "ăn kém", "chán ăn", "rối loạn tiêu hóa", "bụng ậm ạch"]],
+    ["TH-12", "Chưa rõ / hỏi chung", []]
+  ],
+
+  "gia_tri": {
+    "_doc": "Nhom gia tri G1/G2/G3 theo P4 §4. Suy tu nhom van de, roi cho tu khoa dich vu ghi de len: khach noi 'combo' hay 'ca da day va dai trang' thi la G1 du nhom van de la gi.",
+    "G1": ["TH-01", "TH-03", "TH-07"],
+    "G2": ["TH-02", "TH-04", "TH-05", "TH-10", "TH-11"],
+    "G3": ["TH-06", "TH-08", "TH-09"],
+    "g1_kw": ["combo", "cả dạ dày và đại tràng", "cả hai", "dạ dày và đại tràng", "gói tầm soát", "cắt polyp", "sinh thiết", "bác sĩ giang", "chuyên gia", "tiến sĩ"],
+    "g3_kw": ["chỉ khám", "khám thôi", "tư vấn thôi", "siêu âm", "xét nghiệm máu", "soi trực tràng", "sigma"]
+  },
+
+  "tin_hieu": {
+    "_doc": "Tu khoa cho 5 tin hieu cham do nong. Tin hieu (1) suy ra tu nhom van de (khac TH-12). Tin hieu (5) lay tu truong 'Co SDT' trong header.",
+    "th2_thoi_gian": ["hôm nay", "ngày mai", "sáng mai", "chiều mai", "mai em", "mai đến", "tuần này", "tuần sau", "cuối tuần", "trong tuần", "trong tháng", "tháng này", "đặt lịch", "giữ lịch", "đang đến", "đến khám", "thứ bảy", "chủ nhật", "sáng sớm"],
+    "th3_hoi_cu_the": ["bác sĩ nào", "ai soi", "bác sĩ giang", "có lịch", "đặt lịch", "bao nhiêu tiền", "giá bao nhiêu", "chi phí", "hết bao nhiêu", "nhịn ăn", "chuẩn bị gì", "cần mang gì", "mê được không", "soi loại nào", "có cần soi", "bảo hiểm"],
+    "th4_mo_ta_ro": ["mấy tháng", "mấy năm", "hai tháng", "ba tháng", "2 tháng", "3 tháng", "1 năm", "2 năm", "nửa năm", "mấy tuần", "từ tháng", "uống thuốc rồi", "đã uống thuốc", "đi khám rồi", "có kết quả", "kết quả ghi", "siêu âm rồi", "xét nghiệm rồi"]
+  },
+
+  "ghi_de": {
+    "_doc": "Bon luat ghi de - P8 §1. Luat 2 (co do) nam o khoi 'co_do'.",
+    "da_dat_lich": ["đặt lịch", "giữ lịch", "đang đến", "đến khám", "hẹn khám", "đã hẹn", "mai em đến", "em đến"],
+    "da_co_ket_qua": ["đã soi ở", "soi ở bệnh viện", "có kết quả", "kết quả nội soi", "kết quả sinh thiết", "bác sĩ kia", "được chỉ định soi", "họ chỉ định", "phiếu kết quả", "khám ở chỗ khác", "chụp ct", "có phim"],
+    "den_hen_soi_lai": ["soi lại", "nội soi lại", "bác sĩ hẹn", "đến hẹn", "theo hẹn", "đã cắt polyp"]
+  },
+
+  "rao_can": {
+    "_doc": "Map tu khoa -> ma L6.x. Mot hoi thoai co the mang nhieu rao can. L6.8 (ne ket qua) KHONG bat duoc chac bang tu khoa - tu dien chi bat duoc tin hieu be mat, con lai phai nguoi doc. Xem P6 §2 phan phan biet L6.4 vs L6.8.",
+    "L6.7": {"nhom": "SỢ", "ten": "Ngại tiền mê / gây mê", "kw": ["gây mê", "tiền mê", "thuốc mê", "mê có hại", "mê có sao", "sợ mê", "không tỉnh", "ảnh hưởng trí nhớ", "em bị tim", "huyết áp cao", "bệnh nền", "đang mang thai", "có thai"]},
+    "L6.5": {"nhom": "SỢ", "ten": "Sợ nội soi", "kw": ["sợ nôn", "buồn nôn khi soi", "sợ đau", "em sợ", "sợ lắm", "nghe nói đau", "sợ ống", "đưa ống", "sặc", "ghê", "sợ thuốc làm sạch", "uống thuốc rửa ruột"]},
+    "L6.9": {"nhom": "NGỜ", "ten": "Ngờ vệ sinh dây soi", "kw": ["dây soi", "ống soi có sạch", "dùng chung", "lây bệnh", "lây nhiễm", "tiệt trùng", "khử khuẩn", "có sạch không", "lây hp", "lây viêm gan"]},
+    "L6.2": {"nhom": "NGỜ", "ten": "So sánh nơi khác", "kw": ["tham khảo thêm", "xem thêm", "chỗ khác", "nơi khác", "so sánh", "bên kia", "mấy nơi", "vài nơi", "bệnh viện công", "bạch mai", "việt đức", "bệnh viện k", "ở viện", "phòng khám khác"]},
+    "L6.8": {"nhom": "NÉ", "ten": "Né kết quả", "kw": ["để qua tết", "qua tết", "để sau", "từ từ", "chắc không sao", "biết rồi lại lo", "soi ra bệnh", "ra bệnh thì sao", "sợ phát hiện", "ngại biết", "để em suy nghĩ thêm", "chưa muốn soi"]},
+    "L6.3": {"nhom": "NGẠI", "ten": "Chưa tài chính / hỏi bảo hiểm", "kw": ["chưa có tiền", "không đủ tiền", "đắt", "nhiều tiền", "hơi cao", "để em tính", "bảo hiểm", "bhyt", "có bảo hiểm không", "giảm được không"]},
+    "L6.4": {"nhom": "NGẠI", "ten": "Chưa có thời gian / nghỉ làm", "kw": ["không có thời gian", "em bận", "chưa sắp xếp", "phải nghỉ làm", "mất bao lâu", "có phải nghỉ", "không ai đưa", "không có ai đi cùng", "làm cả ngày"]},
+    "L6.6": {"nhom": "NGỜ+NGẠI", "ten": "Hỏi ý kiến người thân", "kw": ["hỏi chồng", "hỏi vợ", "hỏi nhà", "hỏi gia đình", "người nhà", "bàn với", "hỏi bố mẹ", "hỏi con", "đặt cho bố", "đặt cho mẹ"]}
+  },
+
+  "khu_vuc_gan": {
+    "_doc": "THV chi co MOT co so: 139 Dai La, Tuong Mai, Ha Noi. Khach NGOAI Ha Noi -> L2.5. Khach TRONG Ha Noi ma bao xa/ban -> L6.4.",
+    "kw": ["hà nội", "hanoi", "hn", "đại la", "tương mai", "hoàng mai", "thanh xuân", "đống đa", "hai bà trưng", "cầu giấy", "ba đình", "hoàn kiếm", "long biên", "hà đông", "nam từ liêm", "bắc từ liêm", "tây hồ", "gia lâm", "đông anh", "thanh trì"]
+  },
+
+  "tu_cam": ["khỏi 100%", "cam kết 100%", "không đau", "an toàn tuyệt đối", "không biến chứng", "sạch hp 100%", "tốt nhất", "số 1", "duy nhất", "rẻ nhất", "chắc chắn không phải ung thư", "không phải ung thư", "chỉ là viêm thôi", "không cần soi đâu", "phát hiện 100%", "yên tâm 100%", "không sao đâu", "chắc không sao"],
+
+  "tran_an_sai": {
+    "_doc": "Cau tran an trong hoi thoai CO CO DO = loi nang nhat cua he (P5 §1 loi 1). Tim trong loi NHAN VIEN.",
+    "kw": ["không sao đâu", "chắc không sao", "không phải ung thư", "chỉ là viêm", "viêm thôi", "bình thường thôi", "không nghiêm trọng", "uống thuốc xem sao", "uống thuốc trước", "theo dõi thêm đã", "không cần soi"]
+  },
+
+  "bang_chung_thv": {
+    "_doc": "Bang chung that cua THV (P1 §2). Dung de dem xem NV co dua bang chung hay chi dung tinh tu.",
+    "kw": ["bạch mai", "đỗ anh giang", "tiến sĩ", "fujifilm", "vp-7000", "vp7000", "bli", "lci", "trí tuệ nhân tạo", "công nghệ ai", "bác sĩ gây mê", "giấy phép", "sở y tế", "quốc khánh", "12 năm", "20 năm"]
+  },
+
+  "dau_hieu_nguoi_nha": ["cho bố", "cho mẹ", "cho con", "cả nhà", "chồng em", "vợ em", "bố em", "mẹ em", "ông em", "bà em", "gia đình", "cháu", "hai bố con", "người nhà em"]
+}

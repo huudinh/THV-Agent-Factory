@@ -1,0 +1,21 @@
+# Dau ra bao cao — chua du lieu khach that, KHONG commit
+output/
+rows.json
+*.xlsx
+!doc/mau-du-lieu/*.xlsx
+
+# Du lieu nguon hoi thoai that — KHONG commit
+hoi-thoai*.md
+hoi-thoai*.txt
+*_hoithoai.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# He thong
+.DS_Store
+Thumbs.db
+~$*
