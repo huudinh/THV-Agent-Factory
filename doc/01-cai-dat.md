@@ -68,6 +68,8 @@ Chỉ cần **một** nền tảng. Nếu chưa biết chọn gì: dùng **Claud
 
 # 2. File nào upload, file nào không
 
+**Tải file ở đâu:** repo [`github.com/huudinh/THV-Agent-Factory`](https://github.com/huudinh/THV-Agent-Factory) → nút **Code** → **Download ZIP** → giải nén. Cần vài file lẻ thì mở file trên GitHub → nút **Raw** → lưu lại.
+
 **UPLOAD 18 file** (vào Knowledge / Add content):
 
 | Nhóm | File |

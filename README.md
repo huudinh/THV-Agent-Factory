@@ -28,6 +28,8 @@ Dành cho **Phòng khám Đa khoa Tiêu Hóa Việt** — `tieuhoaviet.com.vn` �
 
 **Người mới bắt đầu từ trang đó, không phải từ đây.** Repo này là phần file để cài vào Project/GPT/Gem — trang hướng dẫn nói *khi nào dùng cái gì*.
 
+**Tải file:** nút **Code** → **Download ZIP**, hoặc mở từng file → **Raw** → lưu lại. Mỗi tháng lấy bản [`P7`](knowledge/P7-chien-dich-thang.md) mới tại đây.
+
 > Trang đang ở chế độ **ai có link cũng xem được** — phát link cho cả nhóm là dùng được ngay.
 
 Kiến trúc kế thừa [`Paris-Agent-Factory`](../Paris-Agent-Factory/) v1.0 (bản thân nó kế thừa `Kangnam-Agent-Factory` v2.3). Cùng công thức **lõi brand-neutral + module thương hiệu**, nên đổi brand = đổi module `P`, không sửa lõi. Nhưng bản tiêu hóa **không dùng được khuôn nha khoa nguyên xi** — ba lý do ở mục ⭐ bên dưới.

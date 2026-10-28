@@ -94,6 +94,19 @@ Xếp theo mức chặn công việc, nặng nhất lên đầu.
 
 ---
 
+## Lịch sử trang hướng dẫn
+
+| Bản | Ngày | Thay đổi |
+|---|---|---|
+| v1.0 | 28/10/2026 | Dựng trang: khối cờ đỏ, 5 nhóm người dùng, 4 khối copy, 22 prompt |
+| v1.1 | 28/10/2026 | Dựng lại style + layout theo hệ Be Vietnam Pro: thanh header tối, step số tròn, file-card có badge, prompt-card có header + footer, bảng header tối. Prompt tăng lên 30 |
+| v1.2 | 28/10/2026 | Đồng bộ tone: khối cờ đỏ dùng chung nền tối với header, đỏ rút về vai trò tín hiệu |
+| v1.3 | 28/10/2026 | Sửa tương phản chữ trong khối tối (`ol.numbered>li` đè mất màu chữ sáng) · lưới 6 ô cờ đỏ chia hết 1/2/3 cột · vạch vàng chuyển về thanh header |
+| v1.4 | 28/10/2026 | Điểm nhấn trong khối tối đổi từ đỏ sang vàng |
+| v1.5 | 28/10/2026 | Thêm link repo GitHub vào nav, hero, mục cài đặt và footer |
+
+---
+
 ## Ghi chú về cách dựng bản này
 
 **Phần viết mới hoàn toàn:** `SYSTEM-PROMPT` (cả hai bản) · `knowledge/P1–P9` · `reports/R1–R6` · `reports/W1–W3` · `doc/01–05` · `doc/mau-du-lieu/*` · `tools/tu-dien-tieu-hoa.json` · `tools/phan_loai.py` · `tools/huong-dan.html` · `README.md`.

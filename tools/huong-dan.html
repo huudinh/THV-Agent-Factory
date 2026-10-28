@@ -68,6 +68,8 @@
   .bar-nav a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.74);text-decoration:none;
              padding:5px 9px;border-radius:7px}
   .bar-nav a:hover{color:#fff;background:rgba(255,255,255,.14)}
+  .bar-nav a.repo{color:var(--deep-accent);border:1px solid rgba(230,180,92,.45)}
+  .bar-nav a.repo:hover{color:#fff;background:rgba(230,180,92,.2);border-color:var(--deep-accent)}
   .bar-nav a.hot{color:var(--flag-on-dark)}
   .bar-nav a.hot:hover{color:#fff;background:rgba(255,141,128,.22)}
 
@@ -91,6 +93,11 @@
   .promise dt{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
               color:var(--deep-accent);margin:0 0 4px}
   .promise dd{margin:0;font-size:15px;font-weight:600;color:#fff}
+  .hero-repo{margin:18px 0 0;font-size:14.5px;color:rgba(255,255,255,.8)}
+  .hero-repo a{color:var(--deep-accent);font-weight:700;text-decoration:none;
+               border-bottom:1px solid rgba(230,180,92,.45);font-family:var(--mono);
+               font-size:13.5px}
+  .hero-repo a:hover{border-bottom-color:var(--deep-accent)}
 
   section.step{padding-block:38px;border-bottom:1px solid var(--line)}
   section.step:first-of-type{padding-top:36px}
@@ -325,6 +332,7 @@
       <a href="#kiem">4 · Chạy thử</a>
       <a href="#suco">5 · Sự cố</a>
       <a href="#khacbiet">Đặc thù ngành</a>
+      <a class="repo" href="https://github.com/huudinh/THV-Agent-Factory" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </div>
 </div>
@@ -344,6 +352,8 @@
       <div><dt>Prompt</dt><dd>22 câu bấm copy là dán được</dd></div>
       <div><dt>Nền tảng</dt><dd>Claude · Gemini · ChatGPT</dd></div>
     </dl>
+    <p class="hero-repo">Toàn bộ file tri thức và khuôn báo cáo:
+      <a href="https://github.com/huudinh/THV-Agent-Factory" target="_blank" rel="noopener">github.com/huudinh/THV-Agent-Factory</a></p>
   </div>
 </div>
 
@@ -881,7 +891,13 @@ Không chào hỏi sáo rỗng, không giải thích mình sắp làm gì. Đi t
     <p>Không bỏ <code class="lc">P4</code>, <code class="lc">P6</code>, <code class="lc">P8</code> — ba file giữ bộ mã, cột cờ đỏ và cách chấm. Thiếu một file là trợ lý tự nghĩ ra cách chấm riêng.</p>
   </div>
 
-  <p>Không tải được 18 file rời thì dùng <b>hai file gộp</b> dưới đây — nội dung y nguyên, chỉ gộp lại cho dễ upload.</p>
+  <div class="note teal">
+    <p class="panel-t">Tải 18 file ở đâu</p>
+    <p>Repo: <a href="https://github.com/huudinh/THV-Agent-Factory" target="_blank" rel="noopener"><code>github.com/huudinh/THV-Agent-Factory</code></a> → nút <b>Code</b> → <b>Download ZIP</b> → giải nén, rồi upload thư mục <code>knowledge/</code> và <code>reports/</code>.</p>
+    <p>Chỉ cần vài file thì mở thẳng file trên GitHub → nút <b>Raw</b> → lưu lại. Repo cũng là nơi lấy <b>bản <code>P7</code> mới mỗi tháng</b>.</p>
+  </div>
+
+  <p>Máy không tải được file thì dùng <b>hai file gộp</b> dưới đây — nội dung y nguyên, chỉ gộp lại cho dễ upload.</p>
   <div class="fcard">
     <div class="fcard-h">
       <span class="fname">Tri thức P1–P9 (gộp sẵn)</span>
@@ -4558,6 +4574,9 @@ Việc sửa bài mức đỏ phải đứng trước mọi bài mới.</div>
     <li><b>Bản hướng dẫn chuẩn bị trước nội soi</b> chính thức. Thiếu nó thì trực page không được tự nêu số giờ nhịn ăn — và đây đúng là khâu chặn mốc rò nặng nhất.</li>
     <li><b>Tiêu chí sàng lọc trước tiền mê</b>: bệnh nền nào cần hội chẩn, xét nghiệm nào bắt buộc.</li>
   </ul>
+
+  <h3>Mã nguồn</h3>
+  <p>Toàn bộ repo, gồm cả bản nguồn của trang này: <a href="https://github.com/huudinh/THV-Agent-Factory" target="_blank" rel="noopener"><code>github.com/huudinh/THV-Agent-Factory</code></a></p>
 
   <h3>Bảo trì — việc duy nhất phải làm mỗi tháng</h3>
   <p>Thay <code>P7-chien-dich-thang.md</code>: đổi tên bản cũ thành <code>P7-2026-10.md</code>, tạo bản mới, upload lại lên Knowledge và <b>xoá bản cũ</b>. Không đụng file nào khác.</p>
