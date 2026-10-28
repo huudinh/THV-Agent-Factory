@@ -128,6 +128,18 @@
   code.cd{font-weight:700;color:var(--flag-ink);background:var(--flag-wash);
           border-color:var(--flag-wash)}
 
+  .cta-box{background:var(--surface);border:1px solid var(--line);
+           border-top:4px solid var(--gold-fill);border-radius:var(--radius);
+           padding:24px 20px;margin:0 0 18px;text-align:center;box-shadow:var(--shadow)}
+  a.cta{display:inline-block;background:var(--primary-fill);color:var(--on-primary);
+        font-size:17.5px;font-weight:700;text-decoration:none;padding:15px 28px;
+        border-radius:9px;box-shadow:0 2px 0 var(--gold-soft)}
+  a.cta:hover{filter:brightness(.92)}
+  .cta-sub{margin:13px 0 0;font-size:14px;color:var(--ink-2)}
+  .cta-sub b{color:var(--ink)}
+  .cta-alt{margin:9px 0 0;font-size:13.5px;color:var(--muted)}
+  .cta-alt a{font-weight:600}
+
   .note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold-fill);
         padding:14px 16px;border-radius:0 var(--radius) var(--radius) 0;margin:0 0 16px;
         font-size:14.8px;color:var(--ink-2);box-shadow:var(--shadow)}
@@ -500,7 +512,13 @@
 <!-- ================= 1 · CÀI ĐẶT ================= -->
 <section class="step" id="caidat">
   <div class="step-head"><span class="step-num">1</span><h2>Cài đặt — 15 phút, làm một lần</h2></div>
-  <p class="step-sub">Năm ô cần điền, theo đúng thứ tự form hỏi. Mỗi ô có nút Copy — không cần tải repo về.</p>
+  <p class="step-sub">Tải bộ file về, tạo một trợ lý riêng trên nền tảng bạn dùng, dán bộ não và tải tri thức lên. Năm ô cần điền, theo đúng thứ tự form hỏi.</p>
+
+  <div class="cta-box">
+    <a class="cta" href="https://github.com/huudinh/THV-Agent-Factory/archive/refs/heads/main.zip">⬇︎&nbsp; Tải bộ file về máy</a>
+    <p class="cta-sub">Giải nén bằng <b>Extract All</b> — đừng kéo file ra từ cửa sổ ZIP. Thứ cần dùng nằm ở hai thư mục <code>knowledge/</code> và <code>reports/</code>.</p>
+    <p class="cta-alt">Hoặc mở repo để lấy từng file: <a href="https://github.com/huudinh/THV-Agent-Factory" target="_blank" rel="noopener">github.com/huudinh/THV-Agent-Factory</a> → nút <b>Raw</b> → lưu lại.</p>
+  </div>
 
   <h3>Ô ① + ② — Tên và Mô tả</h3>
   <div class="dvar">
@@ -892,12 +910,11 @@ Không chào hỏi sáo rỗng, không giải thích mình sắp làm gì. Đi t
   </div>
 
   <div class="note teal">
-    <p class="panel-t">Tải 18 file ở đâu</p>
-    <p>Repo: <a href="https://github.com/huudinh/THV-Agent-Factory" target="_blank" rel="noopener"><code>github.com/huudinh/THV-Agent-Factory</code></a> → nút <b>Code</b> → <b>Download ZIP</b> → giải nén, rồi upload thư mục <code>knowledge/</code> và <code>reports/</code>.</p>
-    <p>Chỉ cần vài file thì mở thẳng file trên GitHub → nút <b>Raw</b> → lưu lại. Repo cũng là nơi lấy <b>bản <code>P7</code> mới mỗi tháng</b>.</p>
+    <p>Mỗi tháng quay lại repo lấy <b>bản <code>P7</code> mới</b> — đó là file duy nhất phải thay định kỳ. Xem mục bảo trì ở cuối trang.</p>
   </div>
 
-  <p>Máy không tải được file thì dùng <b>hai file gộp</b> dưới đây — nội dung y nguyên, chỉ gộp lại cho dễ upload.</p>
+  <h3>Không tải được file? Lấy nội dung ở đây</h3>
+  <p>Máy công ty chặn tải file, hoặc nền tảng giới hạn số file — thì dùng <b>hai file gộp</b> dưới đây. Nội dung y nguyên, chỉ gộp lại cho dễ upload: dán vào một file <code>.txt</code> rồi tải lên.</p>
   <div class="fcard">
     <div class="fcard-h">
       <span class="fname">Tri thức P1–P9 (gộp sẵn)</span>

@@ -104,6 +104,7 @@ Xếp theo mức chặn công việc, nặng nhất lên đầu.
 | v1.3 | 28/10/2026 | Sửa tương phản chữ trong khối tối (`ol.numbered>li` đè mất màu chữ sáng) · lưới 6 ô cờ đỏ chia hết 1/2/3 cột · vạch vàng chuyển về thanh header |
 | v1.4 | 28/10/2026 | Điểm nhấn trong khối tối đổi từ đỏ sang vàng |
 | v1.5 | 28/10/2026 | Thêm link repo GitHub vào nav, hero, mục cài đặt và footer |
+| v1.6 | 28/10/2026 | Thêm **khối CTA tải bộ file** (ZIP từ GitHub) ở đầu mục cài đặt, kèm lưu ý giải nén bằng Extract All · hai file gộp chuyển thành khung dự phòng "Không tải được file? Lấy nội dung ở đây" |
 
 ---
 
